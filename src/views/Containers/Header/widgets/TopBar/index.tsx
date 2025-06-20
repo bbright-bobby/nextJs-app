@@ -5,7 +5,7 @@ import { Col, Dropdown, DropdownToggle, Row } from "reactstrap";
 import dataa from "@/data/langConfig.json";
 import { CurrencyContext } from "@/helpers/currency/CurrencyContext";
 import { useRouter } from "next/navigation";
-
+ 
 const GET_CURRENCY = gql`
   query getCurrency {
     currency {
@@ -15,7 +15,7 @@ const GET_CURRENCY = gql`
     }
   }
 `;
-
+ 
 const TopBar: React.FC = () => {
   const router = useRouter();
   const { t } = useTranslation("common");
@@ -41,7 +41,7 @@ const TopBar: React.FC = () => {
   const toggleCurrency = () => {
     setOpenUsd(!openUsd);
   };
-
+ 
   const toggleLang = () => {
     setOpenLang(!openLang);
   };
@@ -50,7 +50,7 @@ const TopBar: React.FC = () => {
     const urlTemp = path[path.length - 1];
     setUrl(urlTemp);
   }, []);
-
+ 
   return (
     <div className={`top-header ${url === "layout6" ? "top-header-inverse" : ""}`}>
       <div className="custom-container">
@@ -165,3 +165,4 @@ const TopBar: React.FC = () => {
   );
 };
 export default TopBar;
+ 

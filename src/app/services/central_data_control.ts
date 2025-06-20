@@ -76,7 +76,7 @@ export class CentralDataCollector {
   private initialize(): void {
     this.resetInitialLoad();
     this.refreshInterval = parseInt(process.env.NEXT_PUBLIC_REFRESH_INTERVAL || '60');
-    this.scheduleGetData();
+  //  this.scheduleGetData();
   }
 
    scheduleGetData(): void {
@@ -84,7 +84,7 @@ export class CentralDataCollector {
       console.log('Refreshing data');
       await this.getData();
       // await refreshCurrentStore(); // Implement this function as needed
-      this.scheduleGetData();
+    //  this.scheduleGetData();
     }, this.refreshInterval * 1000);
   }
 
